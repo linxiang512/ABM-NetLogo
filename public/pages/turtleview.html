@@ -1,0 +1,108 @@
+<html>
+<head>
+	<script>
+		window.onload = function(){
+			document.getElementById("turtNum").innerHTML = turtle;
+			window.addEventListener("click", e => {
+				console.log(e);
+			});
+			let setupTurt = opener.BreedManager._breeds.TURTLES.members[turtle]
+			setupForm();
+			fillForm();
+			//var intervakId = window.setInterval(function(){
+				//TODO add code to only update when the model is running
+				//fillForm();
+			//},1);
+		};
+		function setupForm(){
+			let turt = opener.BreedManager._breeds.TURTLES.members[turtle];
+			let varCount = turt._varManager._names.length;
+			for (let step = 0; step < varCount; step++){
+				let name = turt._varManager._names[step];
+				let eleP = document.createElement("p");
+				let eleLabel = document.createElement("label");
+				let eleInput = document.createElement("input");
+				eleLabel.innerHTML = name;
+				eleLabel.for = step;
+				if (typeof(turt._varManager[name]) == "number"){
+					eleInput.type = "number";
+					eleInput.step = "any";
+				}else if (typeof(turt._varManager[name]) == "boolean"){
+					eleInput.type = "checkbox";
+				} else {
+					eleInput.type = "text";
+				}
+				eleInput.id = name;
+				eleInput.name = name;
+				if (name == "breed"){
+					eleInput.disabled = true;
+				}
+				eleP.appendChild(eleLabel);
+				eleP.appendChild(eleInput);
+				document.getElementById("form").appendChild(eleP);
+			}
+			let eleSubmit = document.createElement("input");
+			eleSubmit.type = "button";
+			eleSubmit.id = "submit";
+			eleSubmit.onclick = function(){submitChange()};
+			eleSubmit.value = "Submit";
+			document.getElementById("form").appendChild(eleSubmit);
+		}
+		function fillForm(){
+			let turt = opener.BreedManager._breeds.TURTLES.members[turtle];
+			let varCount = turt._varManager._names.length;
+			for(let step = 0; step < varCount; step++){
+				let name = turt._varManager._names[step];
+				let tempVal = turt._varManager[name];
+				let eleSelect = document.getElementById(name);
+				if (eleSelect.type == "checkbox"){
+					if (tempVal == true){
+						eleSelect.checked = true;
+					}
+				} else {
+					eleSelect.value = tempVal;
+				}
+				
+			}
+		}
+		function submitChange(){
+			let turt = opener.BreedManager._breeds.TURTLES.members[turtle];
+			let varCount = turt._varManager._names.length;
+			for (let step = 0; step < varCount; step++){
+				let name = turt._varManager._names[step];
+				let tempEle = document.getElementById(name);
+				if (tempEle.type == "checkbox"){
+					turt._varManager[name] = tempEle.checked
+				} else if (tempEle.type == "number"){
+					turt._varManager[name] = Number(tempEle.value);
+				}else {
+					turt._varManager[name] = tempEle.value
+				}
+			}
+			fillForm();
+		}
+	</script>
+	<style>
+	/* spaceing for fields*/
+	form  { display: table;      }
+	p     { display: table-row;  }
+	label { display: table-cell; }
+	input { display: table-cell; }
+	/* remove arrow in number fields*/
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	input[type=number] {
+		-moz-appearance: textfield;
+	}
+
+	</style>
+</head>
+<body>
+	<h1>Turtle Viewer <span id="turtNum"></span></h1>
+	<form id="form">
+	</form>
+</body>
+</html>

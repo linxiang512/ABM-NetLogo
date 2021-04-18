@@ -312,7 +312,7 @@ private[controllers] trait RequestResultGenerator {
     val assetURLs =
       Seq(
         "keywords.js",
-        "fullscreen-view.js",
+        "turtle-view.js",
         "codemirror-mode.js",
         "colors.js",
         "default-shapes.js",
