@@ -101,6 +101,7 @@ exports.selectModelByURL = (modelURL) ->
   return
 
 exports.handPickedModels = [
+  "Sample Models/Sample/Basic Model", 
   "Curricular Models/BEAGLE Evolution/DNA Replication Fork",
   "Curricular Models/Connected Chemistry/Connected Chemistry Gas Combustion",
   "IABM Textbook/chapter 2/Simple Economy",

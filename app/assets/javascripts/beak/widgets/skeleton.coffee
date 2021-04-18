@@ -108,12 +108,24 @@ window.generateRactiveSkeleton = (container, widgets, code, info, isReadOnly, fi
 # coffeelint: disable=max_line_length
 template =
   """
-  <div class="netlogo-model netlogo-display-{{# isVertical }}vertical{{ else }}horizontal{{/}}" style="min-width: {{width}}px;"
+  <head>
+  <style>
+  .split {height: 100%;
+      width: 50%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;}
+  .left {left: 0}
+  .right {right: 0}
+  </style>
+  </head>
+  <div class="netlogo-model netlogo-display-{{# isVertical }}vertical{{ else }}horizontal{{/}}" style="min-width: {{width}}px; min-height: {{height}}px"
        tabindex="1" on-keydown="@this.fire('check-action-keys', @event)"
        on-focus="@this.fire('track-focus', @node)"
        on-blur="@this.fire('track-focus', @node)">
     <div id="modal-overlay" class="modal-overlay" style="{{# !isOverlayUp }}display: none;{{/}}" on-click="drop-overlay"></div>
-
+     <div id = "splitLeft" class="split left">
     <div class="netlogo-display-vertical">
 
       <div class="netlogo-header">
@@ -188,7 +200,8 @@ template =
       </div>
 
     </div>
-
+    </div>
+    <div  id = "splitRight" class="split right">
     <div class="netlogo-tab-area" style="min-width: {{Math.min(width, 500)}}px; max-width: {{Math.max(width, 500)}}px">
       {{# !isReadOnly }}
       <label class="netlogo-tab{{#showConsole}} netlogo-active{{/}}">
@@ -216,7 +229,7 @@ template =
     </div>
 
     <input id="general-file-input" type="file" name="general-file" style="display: none;" />
-
+  </div>
   </div>
   """
 
