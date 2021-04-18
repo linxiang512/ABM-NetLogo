@@ -63,7 +63,7 @@
     }
 
     function pickRandom() {
-      var model = exports.handPickedModels[Math.floor(Math.random() * exports.handPickedModels.length)];
+      var model = exports.handPickedModels[0];
       exports.selectModel(model);
       pickModel(model + ".nlogo");
     }
