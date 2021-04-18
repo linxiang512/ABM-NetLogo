@@ -30,7 +30,8 @@ class Application @Inject() ( assets: Assets
   def attributions = themedPage((_)   => views.html.attributions() , "NetLogo Web Attributions"    , "../")
   def index        = themedPage((req) => views.html.index()(req)   , "NetLogo Web")
   def serverError  = themedPage((_)   => views.html.serverError()  , "NetLogo Web - Error")
-  def whatsNew     = themedPage((req) => views.html.whatsNew()(req), "What's New in NetLogo Web"   , ""   , Option("updates"))
+  def whatsNew     = themedPage((req) => views.html.whatsNew()(req), "What's New in NetLogo Web"   , ""   , Option("updates")) 
+
   // scalastyle:on public.methods.have.type
 
   def model(modelName: String): Action[AnyContent] = {
