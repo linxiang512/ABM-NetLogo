@@ -36,6 +36,7 @@
 
 iframe {
   flex: 0 3 auto;
+  height: 600px;
 }
 
 .model-list {
