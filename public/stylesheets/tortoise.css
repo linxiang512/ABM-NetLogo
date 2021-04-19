@@ -10,6 +10,8 @@
  * - code tab syntax,        netlogo-syntax.css
  */
 
+@media screen and (min-width:480px){
+
 .tortoise {
   display: flex;
   flex-direction: column;
@@ -50,6 +52,7 @@ iframe {
   overflow-x: auto;
   overflow-y: hidden;
   width:100%;
+  width:100vw;
   -webkit-overflow-scrolling: touch; /* Screw Safari/iOS -- JAB (5/1/16) */
 }
 
@@ -60,6 +63,7 @@ iframe {
   display: inline-block;
   overflow: hidden;
   width:98%;
+  width:97px;
   /* In chrome, border-radius lets content bleed through on the corners
    * despite overflow: hidden, which looks awful with the loading animation.
    * This mask fixes that.
@@ -100,4 +104,5 @@ li.compiling.dev {
 
 li.unknown.dev {
   background-image: url('/assets/images/caution.png') !important;
+}
 }
