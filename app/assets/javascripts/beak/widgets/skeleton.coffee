@@ -110,15 +110,22 @@ template =
   """
   <head>
   <style>
-  .split {height: 100%;
-      width: 50%;
+  .splitRight {height: 100%;
+      width: 30%;
       position: fixed;
       z-index: 1;
       top: 0;
       overflow-x: hidden;
-      padding-top: 20px;}
-  .left {left: 0}
-  .right {right: 0}
+      padding-top: 20px;
+      right: 0}
+  .splitLeft {height: 100%;
+      width: 70%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+      left: 0}
   </style>
   </head>
 
@@ -127,7 +134,7 @@ template =
        on-focus="@this.fire('track-focus', @node)"
        on-blur="@this.fire('track-focus', @node)">
     <div id="modal-overlay" class="modal-overlay" style="{{# !isOverlayUp }}display: none;{{/}}" on-click="drop-overlay"></div>
-    <div id = "splitLeft" class="split left">
+    <div id = "splitLeft" class="splitLeft">
     <div class="netlogo-display-vertical">
 
       <div class="netlogo-header">
@@ -202,7 +209,7 @@ template =
       </div>
     </div>
     </div>
-    <div  id = "splitRight" class="split right">
+    <div  id = "splitRight" class="splitRight">
     <div class="netlogo-tab-area" style="min-width: {{Math.min(width, 500)}}px; max-width: {{Math.max(width, 500)}}px">
       {{# !isReadOnly }}
       <label class="netlogo-tab{{#showConsole}} netlogo-active{{/}}">
