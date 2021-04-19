@@ -63,7 +63,6 @@ iframe {
   display: inline-block;
   overflow: hidden;
   width:98%;
-  width:97px;
   /* In chrome, border-radius lets content bleed through on the corners
    * despite overflow: hidden, which looks awful with the loading animation.
    * This mask fixes that.
