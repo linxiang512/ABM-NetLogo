@@ -48,21 +48,15 @@ iframe {
 
 .model-box {
   max-width: 100%;
-  min-height: 300px;
-  overflow-x: auto;
-  overflow-y: hidden;
   width:100%;
-  width:100vw;
-  -webkit-overflow-scrolling: touch; /* Screw Safari/iOS -- JAB (5/1/16) */
 }
 
 .model-container {
   border: 2px solid black;
   background-color: white;
   border-radius: 20px;
-  display: inline-block;
-  overflow: hidden;
-  width:98%;
+  display: block;
+  width: 100%;
   /* In chrome, border-radius lets content bleed through on the corners
    * despite overflow: hidden, which looks awful with the loading animation.
    * This mask fixes that.

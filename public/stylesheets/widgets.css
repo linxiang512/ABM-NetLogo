@@ -3,17 +3,14 @@
  */
 
 .netlogo-model {
-    display: flex;
     padding: 20px;
-    flex-flow: column;
     font-size: 12px;
     font-family: "Lucida Grande", sans-serif;
     outline: none;
 }
 
 .netlogo-display-vertical {
-  display: flex;
-  flex-flow: column;
+  display: block;
 }
 
 .netlogo-display-horizontal {
