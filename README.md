@@ -1,9 +1,9 @@
 # Galapagos
 
-This is where our tortoise lives!
+This is an edited form of the original NetLogo code meant to make the NetLogo Web project more user friendly towards students and educators.
 
-NetLogo Web (formerly known as "Tortoise") is a JavaScript-based version of NetLogo that runs entirely in the client's browser.  This repository is for the [Play](https://www.playframework.com/) application that serves up NetLogo Web pages.
+Learn more about the original NetLogo project [here] (https://ccl.northwestern.edu/netlogo/).
 
-Related is Teletortoise, which allows you to use your browser to interact with an instance of classic NetLogo that is running on a server.  You can check out Teletortoise [here](https://github.com/NetLogo/Teletortoise).
+The original code for NetLogo can be found [here] (https://github.com/NetLogo).
 
-For more information about the NetLogo Web project in general, see [here](https://github.com/NetLogo/NetLogo/wiki/NetLogo-Web).
+More information NetLogo Web in general can be found [here](https://github.com/NetLogo/NetLogo/wiki/NetLogo-Web).
