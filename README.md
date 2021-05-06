@@ -1,4 +1,4 @@
-# Galapagos
+# ABM-NetLogo
 
 This is an edited form of the original NetLogo code meant to make the NetLogo Web project more user friendly towards students and educators.
 
